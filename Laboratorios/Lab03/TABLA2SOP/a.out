@@ -1,0 +1,83 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00000000011eb310 .scope module, "gates" "gates" 2 1;
+ .timescale 0 0;
+L_00000000011eb4a0 .functor NOT 1, v00000000011eb7c0_0, C4<0>, C4<0>, C4<0>;
+L_00000000011e98e0 .functor NOT 1, v00000000011e94b0_0, C4<0>, C4<0>, C4<0>;
+L_0000000001063940 .functor NOT 1, v00000000011e8bd0_0, C4<0>, C4<0>, C4<0>;
+L_00000000010639b0 .functor AND 1, L_00000000011eb4a0, L_00000000011e98e0, v00000000011e8bd0_0, C4<1>;
+L_0000000001063a20 .functor AND 1, v00000000011eb7c0_0, v00000000011e94b0_0, L_0000000001063940, C4<1>;
+L_0000000001063a90 .functor AND 1, v00000000011eb7c0_0, v00000000011e94b0_0, v00000000011e8bd0_0, C4<1>;
+L_0000000001063b00 .functor OR 1, L_00000000010639b0, L_0000000001063a20, L_0000000001063a90, C4<0>;
+v00000000011eb7c0_0 .var "A", 0 0;
+v00000000011e94b0_0 .var "B", 0 0;
+v00000000011e8bd0_0 .var "C", 0 0;
+v00000000011e8c70_0 .net "OUT", 0 0, L_0000000001063b00;  1 drivers
+v00000000011e8d10_0 .net "w1", 0 0, L_00000000011eb4a0;  1 drivers
+v0000000001062750_0 .net "w2", 0 0, L_00000000011e98e0;  1 drivers
+v00000000010627f0_0 .net "w3", 0 0, L_0000000001063940;  1 drivers
+v0000000001062890_0 .net "w4", 0 0, L_00000000010639b0;  1 drivers
+v0000000001063880_0 .net "w5", 0 0, L_0000000001063a20;  1 drivers
+v0000000001063420_0 .net "w6", 0 0, L_0000000001063a90;  1 drivers
+    .scope S_00000000011eb310;
+T_0 ;
+    %vpi_call 2 13 "$display", "A B C | Y" {0 0 0};
+    %vpi_call 2 14 "$display", "--------" {0 0 0};
+    %vpi_call 2 15 "$monitor", "%b %b %b| %b", v00000000011eb7c0_0, v00000000011e94b0_0, v00000000011e8bd0_0, v00000000011e8c70_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011eb7c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011e94b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011e94b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011eb7c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011e94b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011e94b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011e8bd0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 24 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_00000000011eb310;
+T_1 ;
+    %vpi_call 2 29 "$dumpfile", "TABLA2SOP_tb.vcd" {0 0 0};
+    %vpi_call 2 30 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000000011eb310 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "TABLA2SOP.v";
