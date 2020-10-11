@@ -145,7 +145,7 @@ module timer (input wire clock, reset, input wire [3:0]OUT, output wire z_1, z2)
     if(8'b00001010<count)begin
       count <= 8'b00000000;
       end
-      else if (~y) begin
+      else if (~y) begin 
       count <= 8'b00000000;
       end
       else if (reset) begin
