@@ -1,0 +1,41 @@
+$date
+	Sat Oct 31 00:19:23 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 4 ! OUT [3:0] $end
+$var reg 1 " enable $end
+$var reg 4 # in [3:0] $end
+$scope module E6 $end
+$var wire 1 " enable $end
+$var wire 4 $ in [3:0] $end
+$var wire 4 % out [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx %
+bx $
+bx #
+x"
+bx !
+$end
+#1
+bz !
+bz %
+0"
+b0 #
+b0 $
+#4
+b100 !
+b100 %
+1"
+b100 #
+b100 $
+#8
