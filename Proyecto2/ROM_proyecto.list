@@ -1,0 +1,45 @@
+4F //litt F pruebo litt
+A1 //addi 0x1 pruebo addi y bandera carry
+40 //litt0 pruebo bandera cero
+41 //litt1
+21 //pruebo CMP1
+D0 // pruebo out
+40 // litt 0h
+E0 //NANDI
+50 //prueba in
+40 //clear al accu
+80 //jump if zero
+0F // saltar a la posicion .15 de mi ROM
+@00F
+41 //litt 1h
+90 //jump if not zero
+14 // saltar a la posicion .20 de mi ROM
+@014
+4F // litt Fh
+A1 // ADD1 1h
+00 //jump if carry
+1E //saltar a la posicion .30 de mi ROM
+@01E
+41 //litt 1h
+A1 // ADDI 1h
+10 //jump if not carry
+28 // saltar a la posicion .40 de mi ROM
+@028
+41 // lit 1h
+C0 // JUMP
+7F // saltar a la posicion .50 de mi ROM
+@07F
+41 // litt 1h
+70 //Store
+00 // guardar 1h en la posicion 000h de la RAM
+60 // leer el valor guardado en la posicion 000h de la ram
+00
+30 // comparar lo que esta guardado en la posicion 000h de la RAM con el valor del accu
+00
+B0 //sumar lo que esta en la posicion 000h de la RAM con el accu y guardarlo en el accu
+00
+40 //litt 0h
+F0 //hacer un nand de la posicion 000h de la RAM con el accu
+00
+10 //jump para regresar al inicio del programa
+00
